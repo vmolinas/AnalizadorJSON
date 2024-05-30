@@ -1,4 +1,5 @@
 import warnings
+from mensajes import *
 
 warnings.filterwarnings("ignore")
 
@@ -9,28 +10,6 @@ tokens = ("NEWLINE", "BLANK", "COMA", "CORCHETEA", "CORCHETEC", "LLAVEA", "LLAVE
           "SUBDEPARTAMENTOS", "EMPLEADOS", "EDAD", "CARGO", "SALARIO", "ACTIVO",
           "FECHA_CONTRATACION", "PROYECTOS", "ESTADO", "FECHA_INICIO", "FECHA_FIN",
           "FLOAT", "INTEGER", "FECCHA", "STRING")
-
-# Mensaje predeterminado para los elementos reconocidos
-
-def imprimirMensajeKey(t):
-    print(t.lineno, " KEY: " + t.value, end="")
-
-def imprimirMensajeKeyNV(t):
-    print(t.lineno, " KEY: " + t.value)
-
-def imprimirMensajeValor(t):
-    print(t.lineno, " VALOR: " + t.value)
-    # print(" VALOR: " + t.value)
-
-def imprimirError(t):
-    print("Token no reconocido: ", t.value + " [Linea:" , t.lineno,"]")
-
-def imprimirApertura(t):
-    print(t.lineno, " APERTURA: " + t.value)
-    
-def imprimirCierre(t):
-    print(t.lineno, " CIERRE: " + t.value)
-
 
 def t_NEWLINE(t):
     r'\n+'
