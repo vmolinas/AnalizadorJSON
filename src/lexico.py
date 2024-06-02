@@ -38,6 +38,7 @@ def t_LLAVEC(t):
 
 def t_DPUNTOS(t):
     r'\:'
+    print(t.lineno, " DOS PUNTOS: " + t.value)
 
 def t_NULL(t):
     r'null'
@@ -72,11 +73,11 @@ def t_NOMBRE_EMPRESA(t):
     print(t.lineno, " KEY NOMBRE EMPRESA: " + t.value)
 
 def t_FUNDACION(t):
-    r'"fundación"'
+    r'"fundacion"'
     print(t.lineno, " KEY FUNDACION: " + t.value)
 
 def t_DIRECCION(t):
-    r'"dirección"'
+    r'"direccion"'
     print(t.lineno, " KEY DIRECCION: " + t.value)
 
 def t_INGRESOS_ANUALES(t):
@@ -104,7 +105,7 @@ def t_CIUDAD(t):
     print(t.lineno, " KEY CIUDAD: " + t.value)
 
 def t_PAIS(t):
-    r'"país"'
+    r'"pais"'
     print(t.lineno, " KEY PAIS: " + t.value)
 
 def t_NOMBRE(t):
@@ -140,7 +141,7 @@ def t_ACTIVO(t):
     print(t.lineno, " KEY ACTIVO: " + t.value)
 
 def t_FECHA_CONTRATACION(t):
-    r'"fecha_contratación"'
+    r'"fecha_contratacion"'
     print(t.lineno, " KEY FECHA CONTRATACION: " + t.value)
 
 def t_PROYECTOS(t):
@@ -172,7 +173,7 @@ def t_FECHA(t):
     print(t.lineno, " FECHA: " + t.value)
 
 def t_STRING(t):
-    r'"[a-zA-Z0-9 | _ | \- | , | . | : | \{ | \} | \[ | \] | \t]+"'
+    r'"[a-zA-Z0-9 | _ | \- | \, | . | : | \{ | \} | \[ | \] | \t]+"'
     print(t.lineno, " STRING: " + t.value)
 
 def t_error(t):

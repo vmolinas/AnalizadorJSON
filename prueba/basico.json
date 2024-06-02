@@ -2,8 +2,8 @@
     "empresas": [
         {
             "nombre_empresa": "Mc Donalds",
-            "fundación": 2005,
-            "dirección": null,
+            "fundacion": 2005,
+            "direccion": null,
             "ingresos_anuales": 20000025,
             "pyme": false,
             "departamentos": [
@@ -18,7 +18,7 @@
                                     "cargo": "Product Analyst",
                                     "salario": 125065,
                                     "activo": true,
-                                    "fecha_contratación": "2023-09-10",
+                                    "fecha_contratacion": "2023-09-10",
                                     "proyectos": [
                                         {
                                             "nombre": "Mc Flurry",
