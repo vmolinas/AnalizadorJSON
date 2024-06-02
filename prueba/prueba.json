@@ -2,11 +2,11 @@
   "empresas": [
     {
       "nombre_empresa": "Mc Donalds",
-      "fundación": 2005,
-      "dirección": {
+      "fundacion": 2005,
+      "direccion": {
         "calle": "Calle Falsa 123",
         "ciudad": "Springfield",
-        "país": "USA"
+        "pais": "USA"
       },
       "ingresos_anuales": 200000.25,
       "pyme": false,
@@ -26,7 +26,7 @@
                   "cargo": "Product Analyst",
                   "salario": 1250.65,
                   "activo": true,
-                  "fecha_contratación": "2023-09-10",
+                  "fecha_contratacion": "2023-09-10",
                   "proyectos": [
                     {
                       "nombre": "Mc Flurry",
@@ -48,7 +48,7 @@
                   "cargo": "Developer",
                   "salario": 32250.65,
                   "activo": true,
-                  "fecha_contratación": "2020-05-15",
+                  "fecha_contratacion": "2020-05-15",
                   "proyectos": [
                     {
                       "nombre": "Mc chicken",
@@ -69,7 +69,7 @@
                   "cargo": "Project Manager",
                   "salario": 150.65,
                   "activo": true,
-                  "fecha_contratación": "2023-09-10",
+                  "fecha_contratacion": "2023-09-10",
                   "proyectos": [
                     {
                       "nombre": "Chicken burger",
@@ -91,7 +91,7 @@
                   "cargo": "Marketing",
                   "salario": 350.65,
                   "activo": false,
-                  "fecha_contratación": "2020-05-15",
+                  "fecha_contratacion": "2020-05-15",
                   "proyectos": [
                     {
                       "nombre": "Chicken roll",
@@ -119,7 +119,7 @@
                   "cargo": "Product Analyst",
                   "salario": 250.65,
                   "activo": true,
-                  "fecha_contratación": "2023-09-10",
+                  "fecha_contratacion": "2023-09-10",
                   "proyectos": [
                     {
                       "nombre": "kwik-e-mart",
@@ -140,11 +140,11 @@
     },
     {
       "nombre_empresa": "Beetroot squad",
-      "fundación": 1990,
-      "dirección": {
+      "fundacion": 1990,
+      "direccion": {
         "calle": "Calle Falsa 333",
         "ciudad": "shelbyville",
-        "país": "USA"
+        "pais": "USA"
       },
       "ingresos_anuales": 2000.25,
       "pyme": true,
@@ -163,7 +163,7 @@
                   "cargo": "Developer",
                   "salario": 10.65,
                   "activo": true,
-                  "fecha_contratación": "1991-09-10",
+                  "fecha_contratacion": "1991-09-10",
                   "proyectos": [
                     {
                       "nombre": "Jugo betabel",
@@ -178,7 +178,7 @@
                   "cargo": "Developer",
                   "salario": 50.65,
                   "activo": true,
-                  "fecha_contratación": "2010-05-15",
+                  "fecha_contratacion": "2010-05-15",
                   "proyectos": null
                 }
               ]
