@@ -1,6 +1,4 @@
 import warnings
-from lexico import *
-import ply.lex as lex
 
 warnings.filterwarnings("ignore")
 
@@ -21,162 +19,163 @@ def t_BLANK(t):
 
 def t_COMA(t):
     r'\,'
+    return (t)
 
 def t_CORCHETEA(t):
     r'\['
-    print(t.lineno, " APERTURA CORCHETE: " + t.value)
+    return (t)
 
 def t_CORCHETEC(t):
     r'\]'
-    print(t.lineno, " CIERRE CORCHETE: " + t.value)
+    return (t)
 
 def t_LLAVEA(t):
     r'\{'
-    print(t.lineno, " APERTURA LLAVE: " + t.value)
+    return (t)
 
 def t_LLAVEC(t):
     r'\}'
-    print(t.lineno, " CIERRE LLAVE: " + t.value)
+    return (t)
 
 def t_DPUNTOS(t):
     r'\:'
-    print(t.lineno, " DOS PUNTOS: " + t.value)
+    return (t)
 
 def t_NULL(t):
     r'null'
-    print(t.lineno, " VALOR: " + t.value)
+    return (t)
 
 def t_FALSE(t):
     r'false'
-    print(t.lineno, " BOOLEANO: " + t.value)
+    return (t)
 
 def t_TRUE(t):
     r'true'
-    print(t.lineno, " BOOLEANO: " + t.value)
+    return (t)
 
 def t_URI(t):
     r'"(http|https|ftp)://[^\s<>&]+(\.[^\s<>&]+)*(:\d+)?(/[^\s<>&]*)*(\?[^\s<>&]*)?(\#[^\s<>&]*)?"'
-    print(t.lineno, " URL: " + t.value)
+    return (t)
 
 def t_EMPRESAS(t):
     r'"empresas"'
-    print(t.lineno, " KEY EMPRESAS: " + t.value)
+    return (t)
 
 def t_VERSION(t):
     r'"version"'
-    print(t.lineno, " KEY VERSION: " + t.value)
+    return (t)
 
 def t_FIRMA_DIGITAL(t):
     r'"firma_digital"'
-    print(t.lineno, " KEY FIRMA DIGITAL: " + t.value)
+    return (t)
 
 def t_NOMBRE_EMPRESA(t):
     r'"nombre_empresa"'
-    print(t.lineno, " KEY NOMBRE EMPRESA: " + t.value)
+    return (t)
 
 def t_FUNDACION(t):
-    r'"fundacion"'
-    print(t.lineno, " KEY FUNDACION: " + t.value)
+    r'"fundación"'
+    return (t)
 
 def t_DIRECCION(t):
-    r'"direccion"'
-    print(t.lineno, " KEY DIRECCION: " + t.value)
+    r'"dirección"'
+    return (t)
 
 def t_INGRESOS_ANUALES(t):
     r'"ingresos_anuales"'
-    print(t.lineno, " KEY INGRESOS ANUALES: " + t.value)
+    return (t)
 
 def t_PYME(t):
     r'"pyme"'
-    print(t.lineno, " KEY PYME: " + t.value)
+    return (t)
 
 def t_LINK(t):
     r'"link"'
-    print(t.lineno, " KEY LINK: " + t.value)
+    return (t)
 
 def t_DEPARTAMENTOS(t):
     r'"departamentos"'
-    print(t.lineno, " KEY DEPARTAMENTOS: " + t.value)
+    return (t)
 
 def t_CALLE(t):
     r'"calle"'
-    print(t.lineno, " KEY CALLE: " + t.value)
+    return (t)
 
 def t_CIUDAD(t):
     r'"ciudad"'
-    print(t.lineno, " KEY CIUDAD: " + t.value)
+    return (t)
 
 def t_PAIS(t):
-    r'"pais"'
-    print(t.lineno, " KEY PAIS: " + t.value)
+    r'"país"'
+    return (t)
 
 def t_NOMBRE(t):
     r'"nombre"'
-    print(t.lineno, " KEY NOMBRE: " + t.value)
+    return (t)
 
 def t_JEFE(t):
     r'"jefe"'
-    print(t.lineno, " KEY JEFE: " + t.value)
+    return (t)
 
 def t_SUBDEPARTAMENTOS(t):
     r'"subdepartamentos"'
-    print(t.lineno, " KEY SUBDEPARTAMENTOS: " + t.value)
+    return (t)
 
 def t_EMPLEADOS(t):
     r'"empleados"'
-    print(t.lineno, " KEY EMPLEADOS: " + t.value)
+    return (t)
 
 def t_EDAD(t):
     r'"edad"'
-    print(t.lineno, " KEY EDAD: " + t.value)
+    return (t)
 
 def t_CARGO(t):
     r'"cargo"'
-    print(t.lineno, " KEY CARGO: " + t.value)
+    return (t)
 
 def t_SALARIO(t):
     r'"salario"'
-    print(t.lineno, " KEY SALARIO: " + t.value)
+    return (t)
 
 def t_ACTIVO(t):
     r'"activo"'
-    print(t.lineno, " KEY ACTIVO: " + t.value)
+    return (t)
 
 def t_FECHA_CONTRATACION(t):
-    r'"fecha_contratacion"'
-    print(t.lineno, " KEY FECHA CONTRATACION: " + t.value)
+    r'"fecha_contratación"'
+    return (t)
 
 def t_PROYECTOS(t):
     r'"proyectos"'
-    print(t.lineno, " KEY PROYECTOS: " + t.value)
+    return (t)
 
 def t_ESTADO(t):
     r'"estado"'
-    print(t.lineno, " KEY ESTADO: " + t.value)
+    return (t)
 
 def t_FECHA_INICIO(t):
     r'"fecha_inicio"'
-    print(t.lineno, " KEY FECHA INICIO: " + t.value)
+    return (t)
 
 def t_FECHA_FIN(t):
     r'"fecha_fin"'
-    print(t.lineno, " KEY FECHA FIN: " + t.value)
+    return (t)
 
 def t_FLOAT(t):
     r'[0-9]+\.[0-9]+'
-    print(t.lineno, " FLOAT: " + t.value)
+    return (t)
 
 def t_INTEGER(t):
     r'[0-9]+'
-    print(t.lineno, " INTEGER: " + t.value)
+    return (t)
 
 def t_FECHA(t):
     r'"((19[0-9]{2}|20[0-9]{2})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01]))"'
-    print(t.lineno, " FECHA: " + t.value)
+    return (t)
 
 def t_STRING(t):
-    r'"[a-zA-Z0-9 | _ | \- | \, | . | : | \{ | \} | \[ | \] | \t]+"'
-    print(t.lineno, " STRING: " + t.value)
+    r'"[a-zA-Z0-9 | _ | \- | , | . | : | \{ | \} | \[ | \] | \t]+"'
+    return (t)
 
 def t_error(t):
     print("TOKEN NO RECONOCIDO: ", t.value + " [Linea:", t.lineno, "]")
