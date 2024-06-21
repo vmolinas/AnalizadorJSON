@@ -3,11 +3,11 @@ import warnings
 warnings.filterwarnings("ignore")
 
 tokens = ("NEWLINE", "BLANK", "COMA", "CORCHETEA", "CORCHETEC", "LLAVEA", "LLAVEC", "DPUNTOS",
-          "NULL", "FALSE", "TRUE", "URI", "EMPRESAS", "VERSION", "FIRMA_DIGITAL",
+          "NULL", "BOOLEAN", "URI", "EMPRESAS", "VERSION", "FIRMA_DIGITAL",
           "NOMBRE_EMPRESA", "FUNDACION", "DIRECCION", "INGRESOS_ANUALES", "PYME",
           "LINK", "DEPARTAMENTOS", "CALLE", "CIUDAD", "PAIS", "NOMBRE", "JEFE",
-          "SUBDEPARTAMENTOS", "EMPLEADOS", "EDAD", "CARGO", "SALARIO", "ACTIVO",
-          "FECHA_CONTRATACION", "PROYECTOS", "ESTADO", "FECHA_INICIO", "FECHA_FIN",
+          "SUBDEPARTAMENTOS", "EMPLEADOS", "EDAD", "CARGO", "CARGOS", "SALARIO", "ACTIVO",
+          "FECHA_CONTRATACION", "PROYECTOS", "ESTADO", "ESTADOS", "FECHA_INICIO", "FECHA_FIN",
           "FLOAT", "INTEGER", "FECCHA", "STRING")
 
 def t_NEWLINE(t):
@@ -45,13 +45,13 @@ def t_NULL(t):
     r'null'
     return (t)
 
-def t_FALSE(t):
-    r'false'
+def t_BOOLEAN(t):
+    r'(false | true)'
     return (t)
 
-def t_TRUE(t):
-    r'true'
-    return (t)
+# def t_TRUE(t):
+#     r'true'
+#     return (t)
 
 def t_URI(t):
     r'"(http|https|ftp)://[^\s<>&]+(\.[^\s<>&]+)*(:\d+)?(/[^\s<>&]*)*(\?[^\s<>&]*)?(\#[^\s<>&]*)?"'
@@ -133,6 +133,10 @@ def t_CARGO(t):
     r'"cargo"'
     return (t)
 
+def t_CARGOS(t):
+    r'“Poduct Analyst” | “Project Manager” | “UX designer” | “Marketing” | “Developer” | “Devops” | “DB admin”'
+    return(t)
+
 def t_SALARIO(t):
     r'"salario"'
     return (t)
@@ -152,6 +156,9 @@ def t_PROYECTOS(t):
 def t_ESTADO(t):
     r'"estado"'
     return (t)
+
+def t_ESTADOS(t):
+    r'“To do” | “In progress” | “Canceled” | “Done” | “On hold”'
 
 def t_FECHA_INICIO(t):
     r'"fecha_inicio"'
