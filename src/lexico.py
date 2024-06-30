@@ -1,4 +1,5 @@
 import warnings
+import ply.lex as lex
 
 warnings.filterwarnings("ignore")
 
@@ -8,7 +9,7 @@ tokens = ("NEWLINE", "BLANK", "COMA", "CORCHETEA", "CORCHETEC", "LLAVEA", "LLAVE
           "LINK", "DEPARTAMENTOS", "CALLE", "CIUDAD", "PAIS", "NOMBRE", "JEFE",
           "SUBDEPARTAMENTOS", "EMPLEADOS", "EDAD", "CARGO", "CARGOS", "SALARIO", "ACTIVO",
           "FECHA_CONTRATACION", "PROYECTOS", "ESTADO", "ESTADOS", "FECHA_INICIO", "FECHA_FIN",
-          "FLOAT", "INTEGER", "FECCHA", "STRING")
+          "FLOAT", "INTEGER", "FECHA", "STRING")
 
 def t_NEWLINE(t):
     r'\n+'
@@ -74,11 +75,11 @@ def t_NOMBRE_EMPRESA(t):
     return (t)
 
 def t_FUNDACION(t):
-    r'"fundación"'
+    r'"fundacion"'
     return (t)
 
 def t_DIRECCION(t):
-    r'"dirección"'
+    r'"direccion"'
     return (t)
 
 def t_INGRESOS_ANUALES(t):
@@ -106,7 +107,7 @@ def t_CIUDAD(t):
     return (t)
 
 def t_PAIS(t):
-    r'"país"'
+    r'"pais"'
     return (t)
 
 def t_NOMBRE(t):
@@ -133,9 +134,13 @@ def t_CARGO(t):
     r'"cargo"'
     return (t)
 
+# def t_CARGOS(t):
+#     r'"Product Analyst" | "Project Manager" | "UX designer" | "Marketing" | "Developer" | "Devops" | "DB admin"'
+#     return(t)
+
 def t_CARGOS(t):
-    r'“Poduct Analyst” | “Project Manager” | “UX designer” | “Marketing” | “Developer” | “Devops” | “DB admin”'
-    return(t)
+    r'"Product Analyst"|"Project Manager"|"UX designer"|"Marketing"|"Developer"|"Devops"|"DB admin"'
+    return t
 
 def t_SALARIO(t):
     r'"salario"'
@@ -146,7 +151,7 @@ def t_ACTIVO(t):
     return (t)
 
 def t_FECHA_CONTRATACION(t):
-    r'"fecha_contratación"'
+    r'"fecha_contratacion"'
     return (t)
 
 def t_PROYECTOS(t):
@@ -158,7 +163,7 @@ def t_ESTADO(t):
     return (t)
 
 def t_ESTADOS(t):
-    r'“To do” | “In progress” | “Canceled” | “Done” | “On hold”'
+    r'"To do" | "In progress" | "Canceled" | "Done" | "On hold"'
 
 def t_FECHA_INICIO(t):
     r'"fecha_inicio"'
@@ -187,3 +192,5 @@ def t_STRING(t):
 def t_error(t):
     print("TOKEN NO RECONOCIDO: ", t.value + " [Linea:", t.lineno, "]")
     t.lexer.skip(1)
+
+lexer = lex.lex(debug=0)

@@ -4,7 +4,7 @@
             "nombre_empresa": "Mc Donalds",
             "fundacion": 2005,
             "direccion": null,
-            "ingresos_anuales": 20000025,
+            "ingresos_anuales": 200000.25,
             "pyme": false,
             "departamentos": [
                 {
