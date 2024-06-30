@@ -209,8 +209,6 @@ def p_fecha_fin(p):
     '''
 
 def p_error(p):
-    # print("Error sintáctico en '%s'" % p.value + " [Línea: %d]" % p.lineno)
-    # parser.errok()
     if p:
         print("Error sintáctico en '%s' [Línea: %d]" % (p.value, p.lineno))
         # Avanzar el parser un token
@@ -219,66 +217,63 @@ def p_error(p):
         print("Error sintáctico al final del archivo")
 
 
-entradaJson = ""
-entra = ""
-salida = "out.html"
+# entradaJson = ""
+# entra = ""
+# salida = "out.html"
 
-def search_files(folder, extension):
-    files = []
-    for dirpath, dirnames, filenames in os.walk(folder):
-        for filename in filenames:
-            if filename.endswith(extension):
-                files.append(os.path.join(dirpath, filename))
-    return files
+# def search_files(folder, extension):
+#     files = []
+#     for dirpath, dirnames, filenames in os.walk(folder):
+#         for filename in filenames:
+#             if filename.endswith(extension):
+#                 files.append(os.path.join(dirpath, filename))
+#     return files
 
-if len(sys.argv) > 1:  # se ingresó un comando al ejecutar el programa
-    entra = sys.argv[1]
-    f = open(entra, 'r')
-    salida = entra.split('.')[0] + '.html'
-    entradaJson = f.read()
-else:
-    print("Ingrese 1 para ingresar un docbook por consola y 2 para ingresarlo por archivo")
-    opcion = int(input())
-    if opcion == 1:
-        print("Ingrese el código por teclado.")
-        print("Para terminar, presione Ctrl+Z en Windows o Ctrl+D en sistemas UNIX/Linux")
-        while True:
-            try:
-                entra = input('> ')
-                entradaJson += entra + '\n'
-            except EOFError:
-                break
-    elif opcion == 2:
-        while True:
-            print("Ingrese el nombre/dirección de la carpeta:")
-            folder = input()
-            files = search_files(folder, ".json")
-            if len(files) == 0:
-                print("No se encontraron archivos en la carpeta especificada.")
-                continue
-            print("Archivos encontrados:")
-            for i, f in enumerate(files):
-                print(f"{i+1}. {f}")
-            print("Ingrese el número del archivo que desea seleccionar:")
-            file_num = int(input())
-            if file_num < 1 or file_num > len(files):
-                print("Número de archivo inválido.")
-                continue
-            entra = files[file_num - 1]
-            f = open(entra, "r", encoding="utf-8")
-            salida = entra.split('.')[0] + '.html'
-            entradaJson = f.read()
-            break
-    else:
-        print("Ingrese una opción válida.")
-        quit()
+# if len(sys.argv) > 1:  # se ingresó un comando al ejecutar el programa
+#     entra = sys.argv[1]
+#     f = open(entra, 'r')
+#     salida = entra.split('.')[0] + '.html'
+#     entradaJson = f.read()
+# else:
+#     print("Ingrese 1 para ingresar un docbook por consola y 2 para ingresarlo por archivo")
+#     opcion = int(input())
+#     if opcion == 1:
+#         print("Ingrese el código por teclado.")
+#         print("Para terminar, presione Ctrl+Z en Windows o Ctrl+D en sistemas UNIX/Linux")
+#         while True:
+#             try:
+#                 entra = input('> ')
+#                 entradaJson += entra + '\n'
+#             except EOFError:
+#                 break
+#     elif opcion == 2:
+#         while True:
+#             print("Ingrese el nombre/dirección de la carpeta:")
+#             folder = input()
+#             files = search_files(folder, ".json")
+#             if len(files) == 0:
+#                 print("No se encontraron archivos en la carpeta especificada.")
+#                 continue
+#             print("Archivos encontrados:")
+#             for i, f in enumerate(files):
+#                 print(f"{i+1}. {f}")
+#             print("Ingrese el número del archivo que desea seleccionar:")
+#             file_num = int(input())
+#             if file_num < 1 or file_num > len(files):
+#                 print("Número de archivo inválido.")
+#                 continue
+#             entra = files[file_num - 1]
+#             f = open(entra, "r", encoding="utf-8")
+#             salida = entra.split('.')[0] + '.html'
+#             entradaJson = f.read()
+#             break
+#     else:
+#         print("Ingrese una opción válida.")
+#         quit()
 
-file = open(salida, 'w')
-
-
+# file = open(salida, 'w')
 
 parser = yacc.yacc(debug=0,start='sigma')
-# parser = yacc.yacc(start='sigma')
-result = parser.parse(entradaJson)
+# result = parser.parse(entradaJson)
 
-print (result)
+# print (result)
