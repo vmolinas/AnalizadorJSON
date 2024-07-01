@@ -16,7 +16,7 @@ def t_NEWLINE(t):
     t.lexer.lineno += t.value.count("\n")
 
 def t_BLANK(t):
-    r'(\s)+'
+    r'(\s|\t)+'
 
 def t_COMA(t):
     r'\,'
@@ -134,13 +134,9 @@ def t_CARGO(t):
     r'"cargo"'
     return (t)
 
-# def t_CARGOS(t):
-#     r'"Product Analyst" | "Project Manager" | "UX designer" | "Marketing" | "Developer" | "Devops" | "DB admin"'
-#     return(t)
-
 def t_CARGOS(t):
-    r'"Product Analyst"|"Project Manager"|"UX designer"|"Marketing"|"Developer"|"Devops"|"DB admin"'
-    return t
+    r'"Product\sAnalyst"|"Project\sManager"|"UX\sdesigner"|"Marketing"|"Developer"|"Devops"|"DB\sadmin"'
+    return(t)
 
 def t_SALARIO(t):
     r'"salario"'
@@ -163,7 +159,7 @@ def t_ESTADO(t):
     return (t)
 
 def t_ESTADOS(t):
-    r'"To do" | "In progress" | "Canceled" | "Done" | "On hold"'
+    r'"To\sdo"|"In\sprogress"|"Canceled"|"Done"|"On\shold"'
 
 def t_FECHA_INICIO(t):
     r'"fecha_inicio"'
@@ -186,7 +182,7 @@ def t_FECHA(t):
     return (t)
 
 def t_STRING(t):
-    r'"[a-zA-Z0-9 | _ | \- | , | . | : | \{ | \} | \[ | \] | \t]+"'
+    r'"[a-zA-Z0-9 | \_ | \- | \, | \. | \: | \{ | \} | \[ | \] | \t | \n]+"'
     return (t)
 
 def t_error(t):

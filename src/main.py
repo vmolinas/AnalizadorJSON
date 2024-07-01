@@ -105,6 +105,19 @@ else:
     # Obtener entrada del usuario según la opción seleccionada
     if opcion == 'Escribir por consola':
         entradaJson = obtener_entrada_desde_consola()
+        
+        # Solicitar nombre para el archivo JSON de salida
+        print("Ingrese el nombre para el archivo JSON de salida:")
+        nombre_archivo_json = input().strip()
+        
+        # Escribir el archivo JSON de salida en la carpeta de pruebas
+        ruta_salida_json = os.path.join(directorio_pruebas, nombre_archivo_json + '.json')
+        with open(ruta_salida_json, 'w') as f:
+            f.write(entradaJson)
+        
+        # Establecer ruta_archivo_json como la ruta de salida para el archivo HTML
+        ruta_archivo_json = ruta_salida_json
+        
     elif opcion == 'Seleccionar archivo desde la carpeta de pruebas':
         archivos = listar_archivos(directorio_pruebas)
         if not archivos:
@@ -126,9 +139,8 @@ if ruta_archivo_json:
     directorio_salida = os.path.dirname(ruta_archivo_json)
     salida_html = os.path.join(directorio_salida, nombre_archivo + '.html')
 
-    file = open(salida_html, 'w')
-    file.write(str(result))
-    file.close()
+    with open(salida_html, 'w') as file:
+        file.write(str(result))
 
     print(f"Archivo HTML generado: {salida_html}")
 else:
